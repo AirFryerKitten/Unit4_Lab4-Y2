@@ -1,0 +1,9 @@
+1. self.__stack and self.__size are private so then they can't be edited since they hold important information.
+
+2. We should use __is_empty() in pop and top since errors will happen if there is nothing to get from.
+
+3. It needs to be designed with errors so programmers learn how to use the program.
+
+4.When we pull from the last item it is always -1. -1 will then automatically switch to the new last item. This makes it a constant time. If we used 0 we need to readjust all the values of the list. This makes makes it linear time.
+
+5. Google defines it as "the process where you test the smallest functional unit of code". Unit testing is used here because we testing with simple numbers and in small pieces.
