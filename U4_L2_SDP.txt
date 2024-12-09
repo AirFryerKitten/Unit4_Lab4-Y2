@@ -1,0 +1,1 @@
+1. The property that makes stacks ideal for this project is the fact you can only access the last element. 
