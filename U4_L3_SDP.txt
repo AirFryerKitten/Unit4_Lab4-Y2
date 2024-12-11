@@ -1,0 +1,3 @@
+1. The process will be similar to the last lab due to needing to go in a reverse order with the ArrayStack
+
+2. The process will be different because we are dealing with files and only the order of the words are getting reversed not the letters. 
