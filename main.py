@@ -1,6 +1,6 @@
 # Jonas York 
 # U4 L4
-#Balancing brackets with
+#Balancing brackets with ArrayStack
 
 from StackClass import ArrayStack
 
