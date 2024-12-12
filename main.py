@@ -1,37 +1,46 @@
 # Jonas York 
-# U4 L3 
-# Reversing  a file 
+# U4 L4
+#Balancing brackets with
 
 from StackClass import ArrayStack
 
-def getFile(fileName):
-  cleanContents = ""
-  with open(fileName, "r") as openFile:
-      contents = openFile.read()
-      for letter in contents:
-        if ord(letter) >= 65 and ord(letter) <= 90 or ord(letter) >= 97 and ord(letter) <= 122:
-          cleanContents += letter
-        elif letter == " " or "\n":
-          cleanContents += letter
-        
-  return cleanContents
-
-def writeFile(fileName, contents):
-  with open(fileName, "w") as openFile:
-    openFile.write(contents)
+def bracketOrder(bracketList):
+  bracketStatus = "Balanced"
+  myStack = ArrayStack()
+  for item in bracketList:
+    if item == "(" or item == "[" or item == "{":
+      myStack.push(item)
+    else: #
+      if len(myStack) == 0:
+        bracketStatus = "Unbalanced"
+        break
+      else:
+        top = myStack.top()
+        if top == "(" and item == ")":
+          myStack.pop()
+        elif top == "[" and item == "]":
+          myStack.pop()
+        elif top == "{" and item == "}":
+          myStack.pop()
+        else:
+          bracketStatus = "Unbalanced"
+          break
+  if len(myStack) >=1:
+    bracketStatus = "Unbalanced"
+  return bracketStatus
 
 
 def main():
   myStack = ArrayStack()
-  reverse = ""
-  contents = getFile("earnest.txt")
-  contentsList = contents.split(" ")
+  test1 = "()(()){([()])}"
+  test2 = "((()(()){([()])}))"
+  test3 = ")(()){([()])]"
+  test4 = "({[])}"
+  test5 = "("
 
-  for item in contentsList:
-    myStack.push(item)
-  for i in range(len(myStack)):
-    reverse += myStack.pop() + " "
-  writeFile("reverse.txt", reverse)
+  for test in [test1, test2, test3, test4, test5]:
+      # Function call for tests here
+      print(f"{test} - {bracketOrder(test)}\n")
   
 
 if __name__ == "__main__":

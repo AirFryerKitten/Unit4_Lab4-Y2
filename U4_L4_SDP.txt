@@ -1,0 +1,5 @@
+1. We will push to ArrayStack when we have a open bracket such as ( [ { 
+
+2. We will pop from ArrayStack when we have a closed bracket ) ] }
+
+3. The two times there would be an error would be when there is an uneven number of brackets. or the brackets are in the wrong order.

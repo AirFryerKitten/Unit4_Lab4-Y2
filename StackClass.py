@@ -1,8 +1,3 @@
-# Your Code & Heading go Here!
-# Jonas York
-# U4 L1
-# Array Stack
-
 class ArrayStack:
   def __init__(self):
     self.__stack = []
